@@ -1,0 +1,15 @@
+#ifndef ANC_COMMON_TYPE_H
+#define ANC_COMMON_TYPE_H
+
+#include <stdbool.h>
+
+#include "anc_type.h"
+
+#define MILLI_SECOND_PER_SECOND (1000)
+#define MICRO_SECOND_PER_MILLI_SECOND (1000)
+#define NANO_SECOND_PER_MICRO_SECOND (1000)
+#define NANO_SECOND_PER_MILLI_SECOND (1000 * 1000)
+#define NANO_SECOND_PER_SECOND (1000 * NANO_SECOND_PER_MILLI_SECOND)
+
+
+#endif

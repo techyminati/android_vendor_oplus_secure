@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/cal_item_test_tips"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="20sp" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/cal_item_start_btn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/cal_item_start_btn_title" />
+
+            <Button
+                android:id="@+id/cal_item_snr_btn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/cal_item_snr_btn_title" 
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/cal_item_back_btn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/globle_back_btn_title" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/cal_item_test_result"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#FF000000"
+        android:textColor="#FFFFFF"/>
+
+</LinearLayout>

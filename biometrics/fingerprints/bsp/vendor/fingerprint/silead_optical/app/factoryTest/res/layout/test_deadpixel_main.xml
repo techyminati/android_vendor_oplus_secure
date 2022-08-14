@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/MainFrameStyle"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        style="@style/TestResultStyle"
+        android:orientation="horizontal" >
+
+        <TextView
+            style="@style/TestResultItemTitleStyle"
+            android:text="@string/test_item_dead_pixel_result_title" />
+
+        <TextView
+            android:id="@+id/test_dead_pixel_result"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/TestResultContentStyle"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/test_dead_pixel_result_des"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <include layout="@layout/ui_include_preference_main" />
+
+</LinearLayout>

@@ -1,0 +1,111 @@
+/*
+ * yale.liu@oneplus.net 2017-10-24
+ * Engineering test
+ */
+
+#ifndef _FP_ENG_TEST_H_
+#define _FP_ENG_TEST_H_
+
+#define FP_ENG_TEST_NAME_MAX 64
+#define FP_ENG_TEST_RESULT_MAX 2560
+#define FP_ENG_TESTS_MAX 36
+
+#define CMD_SENSOR_NAME 0
+#define CMD_SELF_TEST 1
+#define CMD_BADPIXEL_TEST 2
+#define CMD_QUALITY_TEST 3
+#define CMD_SNR_TEST 4
+#define CMD_FT_SPI_TEST 5
+#define CMD_FT_MT_CHECK_TEST 6
+#define CMD_FT_SPI_RST_INT_TEST 7
+
+#define CMD_FT_INIT_TEST 8
+#define CMD_FT_CAPTURE_DARK_BASE_TEST 9
+#define CMD_FT_CAPTURE_H_DARK_TEST 10
+#define CMD_FT_CAPTURE_L_DARK_TEST 11
+#define CMD_FT_CAPTURE_H_FLESH_TEST 12
+#define CMD_FT_CAPTURE_L_FLESH_TEST 13
+#define CMD_FT_CAPTURE_CHECKBOX_TEST 14
+#define CMD_FT_CAPTURE_CHART_TEST 15
+#define CMD_FT_EXIT_TEST 16
+
+#define CMD_FT_EXPO_AUTO_CALIBRATION_TEST 17
+
+#define CMD_FUN_CALIBRATE_START 18
+#define CMD_FUN_CALIBRATE_TEST1 19
+#define CMD_FUN_CALIBRATE_TEST2 20
+#define CMD_FUN_CALIBRATE_TEST3 21
+#define CMD_FUN_CALIBRATE_TEST4 22
+#define CMD_FUN_CALIBRATE_TEST5 23
+#define CMD_FUN_CALIBRATE_TEST6 24
+#define CMD_FUN_CALIBRATE_TEST7 25
+#define CMD_FUN_CALIBRATE_TEST8 26
+#define CMD_FUN_CALIBRATE_TEST9 27
+#define CMD_FUN_CALIBRATE_TEST10 28
+#define CMD_FUN_CALIBRATE_TEST11 29
+#define CMD_CAPTURE_AGING_TEST 30
+
+#define CMD_FT_CAPTURE_M_FLESH_TEST 31
+#define CMD_FT_CAPTURE_M_DARK_TEST 32
+#define CMD_FT_CAPTURE_CIRCLEDATA_TEST 33
+#define CMD_RELIABLITY_SENSOR_NAME 34
+#define CMD_FT_CAPTURE_FLESH_CIRCLEDATA_TEST 35
+
+static char testname[FP_ENG_TESTS_MAX][FP_ENG_TEST_NAME_MAX] = {
+    "SENSOR-NAME",
+    "SELT-TEST",
+    "BADPIXEL-TEST",
+    "QUALITY-TEST",
+    "SNR-TEST",
+    "SPI-TEST",
+    "MT-CHEKC-TEST",
+    "SPI-RESET-INT-TEST",
+    "INIT-TEST",
+    "DARK-BASE-TEST",
+    "H-DARK-TEST",
+    "L-DARK-TEST",
+    "H-FLESH-TEST",
+    "L-FLESH-TEST",
+    "CHECKBOX-TEST",
+    "CHART-TEST",
+    "EXIT-TEST",
+    "EXOP-TEST",
+    "CALIBRATE-START-TEST",
+    "CALIBRATE-TEST1",
+    "CALIBRATE-TEST2",
+    "CALIBRATE-TEST3",
+    "CALIBRATE-TEST4",
+    "CALIBRATE-TEST5",
+    "CALIBRATE-TEST6",
+    "CALIBRATE-TEST7",
+    "CALIBRATE-TEST8",
+    "CALIBRATE-TEST9",
+    "CALIBRATE-TEST10",
+    "CALIBRATE-TEST11",
+    "CAPTURE-AGING-TEST"
+    "M-FLESH-TEST",
+    "M-DARK-TEST",
+    "CIRCLEDATA_TEST",
+    "SENSOR-NAME-RELIABILITY"
+    "FLESH-CIRCLEDATA-TEST"
+};
+
+typedef struct FP_ENG_TEST_LIST {
+    char name[FP_ENG_TEST_NAME_MAX];
+    int  cmdId;
+} fp_eng_test_list_t;
+
+typedef struct FP_ENG_TESTS {
+    fp_eng_test_list_t tests[FP_ENG_TESTS_MAX];
+    uint32_t size;
+} fp_eng_tests_t;
+
+typedef struct FP_ENG_TSTS_RESULT {
+    int32_t result;
+    int32_t cmdId;
+    char info[FP_ENG_TEST_RESULT_MAX];
+} fp_eng_tests_result;
+
+typedef void (*fingerprint_eng_notify_t)(fp_eng_tests_result *eng_result);
+
+#endif  // FP_ENG_TEST_H

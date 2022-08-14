@@ -1,0 +1,31 @@
+###############################################################################
+## Copyright 2017 OPLUS Mobile Comm Corp., Ltd.
+## OPLUS_FEATURE_SECURITY_COMMON
+## File: shell.te
+## Description : add for fingerprintpay hal service
+## Version: 1.0
+## Date : 2017/11/20
+## Author: Ziqing.Guo@BSP.Fingerprint.Basic
+## ----------------- Revision History: ----------------------
+## <author>      <data>        <desc>
+## Ziqing.Guo  2017/11/20     create this file
+## Bin.Li      2018/03/23     add for devicebinding of trustonic tee in MTK6771
+################################################################################
+
+#ifdef OPLUS_FEATURE_SECURITY_COMMON
+allow shell TBaseDeviceBinding_exec:file { execute_no_trans getattr execute read open };
+#allow shell mobicore:unix_stream_socket connectto;
+allow shell mobicore_user_device:chr_file open;
+allow shell mobicore_user_device:chr_file { read write };
+allow shell mobicore_user_device:chr_file ioctl;
+allow shell mobicore_data_file:file open;
+allow shell mobicore_data_file:dir { search read open getattr };
+allow shell mobicore_data_file:file { read write };
+allow shell mobicore_data_file:file getattr;
+allow shell mobicore_data_file:dir rmdir;
+allow shell vendor_file:file { execute_no_trans };
+#  <trustonic kph> begin
+allow shell mobicore:process { transition rlimitinh siginh noatsecure};
+#  <trustonic kph> end
+#endif /* OPLUS_FEATURE_SECURITY_COMMON */
+

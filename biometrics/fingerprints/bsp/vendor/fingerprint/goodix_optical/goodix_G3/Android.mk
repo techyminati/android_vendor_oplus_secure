@@ -1,0 +1,88 @@
+####################################################################################
+## File: - vendor/fingerprint/goodix_optical/Android.mk
+## OPLUS_FEATURE_FINGERPRINT
+## Copyright (C), 2019-2022, OPLUS Mobile Comm Corp., Ltd
+##
+## Description:
+##      Fingerprint Common Feature Config for Android
+##
+## Version: 1.0
+## Date created: 18:03:11,05/16/2019
+## Author: Bangxiong.Wu@Prd.BaseDrv
+## TAG: BSP.Fingerprint.Basic
+## --------------------------- Revision History: --------------------------------
+##  <author>       <data>            <desc>
+##  Bangxiong.Wu   2019/05/16        create the file
+##  Bangxiong.Wu   2019/05/16        Copy from goodix folder(HASH:f8cd6be70a1af989dab01e321df3bb27c88464f4) to goodix_G3 folder
+##  Bangxiong.Wu   2019/05/16        Modify for G3.0
+##  oujinrong      2019/07/01        remove build type
+##  ziqing.guo     2019/08/16        modify for goodix optical euclid
+####################################################################################
+
+LOCAL_PATH := $(call my-dir)
+
+MODE := release
+
+include $(CLEAR_VARS)
+
+LOCAL_MODULE := fingerprint.goodix_G3.default
+
+CONFIG_INCLUDE_DIRS :=
+CONFIG_INCLUDE_DIRS += \
+    $(LOCAL_PATH)/hal/inc \
+    $(LOCAL_PATH)/../../hwbinder/dcs/include
+
+CONFIG_LIBRARIES :=
+CONFIG_MACROS :=
+
+ifeq ($(TARGET_BUILD_VARIANT),user)
+else
+CONFIG_MACROS += \
+    -DSUPPORT_DUMP
+endif
+
+
+LOCAL_C_INCLUDES += $(CONFIG_INCLUDE_DIRS)
+LOCAL_CFLAGS += $(CONFIG_MACROS)
+
+LOCAL_LDFLAGS += -nodefaultlibs -lc -lm -ldl
+LOCAL_LDFLAGS += $(CONFIG_LIBRARIES)
+LOCAL_VENDOR_MODULE := true
+LOCAL_MODULE_RELATIVE_PATH := hw
+
+LOCAL_SHARED_LIBRARIES :=
+LOCAL_SHARED_LIBRARIES += \
+    libhidlbase \
+    libc \
+    libhwbinder \
+    libhidltransport \
+    libbinder \
+    libutils \
+    libdl \
+    libcutils \
+    liblog \
+    libhardware \
+    libion
+
+LOCAL_SHARED_LIBRARIES += \
+    libgf_hal_G3
+
+LOCAL_SRC_FILES :=
+LOCAL_SRC_FILES += \
+   ./fingerprint.cpp
+LOCAL_STATIC_LIBRARIES :=
+
+LOCAL_LDLIBS :=
+LOCAL_MODULE_TAGS := optional
+
+
+
+
+ifeq ($(FP_SETTINGS_ENABLE), y)
+LOCAL_CFLAGS += -DFP_CONFIG_SETTINGS_ENABLE
+endif
+
+include $(BUILD_SHARED_LIBRARY)
+
+include $(call all-makefiles-under,$(LOCAL_PATH))
+

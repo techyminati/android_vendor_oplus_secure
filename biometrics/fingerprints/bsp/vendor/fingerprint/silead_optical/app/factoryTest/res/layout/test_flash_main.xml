@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/MainFrameStyle"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        style="@style/TestResultStyle"
+        android:orientation="horizontal" >
+
+        <TextView
+            style="@style/TestResultItemTitleStyle"
+            android:text="@string/test_item_flash_result_title" />
+
+        <TextView
+            android:id="@+id/test_flash_result"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <include layout="@layout/ui_include_preference_main" />
+
+</LinearLayout>

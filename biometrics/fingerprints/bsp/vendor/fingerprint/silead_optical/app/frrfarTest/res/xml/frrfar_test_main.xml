@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <PreferenceCategory android:title="@string/main_test_option_title" >
+        <PreferenceScreen
+            android:key="main_test_item_frr"
+            android:title="@string/main_test_item_frr" >
+            <intent
+                android:action="android.intent.action.MAIN"
+                android:targetClass="com.silead.frrfar.FingerFrrTestActivity"
+                android:targetPackage="com.silead.frrfar" />
+        </PreferenceScreen>
+        <PreferenceScreen
+            android:key="main_test_item_far"
+            android:title="@string/main_test_item_far" >
+            <intent
+                android:action="android.intent.action.MAIN"
+                android:targetClass="com.silead.frrfar.FingerFarTestActivity"
+                android:targetPackage="com.silead.frrfar" />
+        </PreferenceScreen>
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/main_finger_manager_title" >
+        <!--PreferenceScreen
+            android:key="main_finger_item_exist"
+            android:title="@string/main_finger_item_exist" >
+            <intent
+                android:action="android.intent.action.MAIN"
+                android:targetClass="com.silead.frrfar.FingerManagerActivity"
+                android:targetPackage="com.silead.frrfar" />
+        </PreferenceScreen-->
+        <PreferenceScreen
+            android:key="main_finger_item_new"
+            android:title="@string/main_finger_item_new" >
+            <intent
+                android:action="android.intent.action.MAIN"
+                android:targetClass="com.silead.frrfar.EnrollEnvSettingActivity"
+                android:targetPackage="com.silead.frrfar" />
+        </PreferenceScreen>
+        <PreferenceScreen
+            android:key="main_finger_item_settings"
+            android:title="@string/main_finger_item_settings" >
+            <intent
+                android:action="android.intent.action.MAIN"
+                android:targetClass="com.silead.frrfar.FingerTestSettingActivity"
+                android:targetPackage="com.silead.frrfar" />
+        </PreferenceScreen>
+        <!--PreferenceScreen
+            android:key="main_finger_item_report"
+            android:title="@string/main_finger_item_report" >
+            <intent
+                android:action="android.intent.action.MAIN"
+                android:targetClass="com.silead.frrfar.FingerTestReportActivity"
+                android:targetPackage="com.silead.frrfar" />
+        </PreferenceScreen-->
+        <PreferenceScreen
+            android:key="main_finger_item_about"
+            android:title="@string/main_finger_item_about" >
+            <intent
+                android:action="android.intent.action.MAIN"
+                android:targetClass="com.silead.frrfar.FingerAboutActivity"
+                android:targetPackage="com.silead.frrfar" />
+        </PreferenceScreen>
+    </PreferenceCategory>
+
+</PreferenceScreen>

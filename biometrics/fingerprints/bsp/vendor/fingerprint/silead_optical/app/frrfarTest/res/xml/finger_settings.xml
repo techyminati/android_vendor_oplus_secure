@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <PreferenceCategory android:title="@string/finger_settings_enroll_title" >
+        <EditTextPreference
+            android:key="finger_settings_enroll_sample_count"
+            android:numeric="integer"
+            android:persistent="false"
+            android:title="@string/finger_settings_enroll_sample_count_title" />
+
+        <MultiSelectListPreference
+            android:entries="@array/finger_settings_enroll_finger_string"
+            android:entryValues="@array/finger_settings_enroll_finger_values"
+            android:key="finger_settings_enroll_finger"
+            android:persistent="false"
+            android:title="@string/finger_settings_enroll_finger_title" />
+
+        <Preference
+            android:key="finger_settings_enroll_data_path"
+            android:persistent="false"
+            android:title="@string/finger_settings_enroll_data_path_title" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/finger_settings_test_title" >
+        <CheckBoxPreference
+            android:key="finger_settings_test_farfrr_img_result"
+            android:persistent="false"
+            android:summary="@string/finger_settings_test_farfrr_img_result_desc"
+            android:title="@string/finger_settings_test_farfrr_img_result_title" />
+
+        <CheckBoxPreference
+            android:key="finger_settings_test_far_run_frr_first"
+            android:persistent="false"
+            android:summary="@string/finger_settings_test_far_run_frr_first_desc"
+            android:title="@string/finger_settings_test_far_run_frr_first_title" />
+
+        <CheckBoxPreference
+            android:key="finger_settings_test_farfrr_img_orig"
+            android:persistent="false"
+            android:summary="@string/finger_settings_test_farfrr_img_orig_desc"
+            android:title="@string/finger_settings_test_farfrr_img_orig_title" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/finger_settings_other_title"
+        android:key="finger_settings_other_category">
+
+        <CheckBoxPreference
+            android:key="finger_settings_other_is_optic"
+            android:persistent="false"
+            android:summary="@string/finger_settings_other_is_optic_desc"
+            android:title="@string/finger_settings_other_is_optic_title" />
+
+        <PreferenceScreen
+            android:key="finger_settings_other_finger_image"
+            android:title="@string/finger_settings_other_optic_finger_img_title" >
+            <intent
+                android:action="android.intent.action.MAIN"
+                android:targetClass="com.silead.frrfar.FingerImageSettingActivity"
+                android:targetPackage="com.silead.frrfar" />
+        </PreferenceScreen>
+
+        <ListPreference
+            android:entries="@array/enroll_env_set_gather_finger_string"
+            android:entryValues="@array/enroll_env_set_gather_finger_value"
+            android:key="finger_settings_other_gather_finger"
+            android:persistent="false"
+            android:title="@string/finger_settings_other_gather_finger_title" />
+
+        <CheckBoxPreference
+            android:key="finger_settings_other_img_display"
+            android:persistent="false"
+            android:summary="@string/finger_settings_other_img_display_desc"
+            android:title="@string/finger_settings_other_img_display_title" />
+
+        <PreferenceScreen
+            android:key="finger_settings_other_img_count_each_down"
+            android:title="@string/finger_settings_other_img_count_each_down_title"
+            android:summary="@string/finger_settings_other_img_count_each_down_desc" >
+            <intent
+                android:action="android.intent.action.MAIN"
+                android:targetClass="com.silead.frrfar.FingerEnrollSettingActivity"
+                android:targetPackage="com.silead.frrfar" />
+        </PreferenceScreen>
+
+        <PreferenceScreen
+            android:key="finger_settings_other_search_sensor"
+            android:title="@string/finger_settings_other_search_sensor_title" >
+            <intent
+                android:action="android.intent.action.MAIN"
+                android:targetClass="com.silead.frrfar.FingerSearchSensorActivity"
+                android:targetPackage="com.silead.frrfar" />
+        </PreferenceScreen>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/finger_settings_factory_title"
+        android:key="finger_settings_factory_category">
+
+        <CheckBoxPreference
+            android:key="finger_settings_factory_test_clear_pwd_auto"
+            android:persistent="false"
+            android:summary="@string/finger_settings_factory_test_clear_pwd_auto_desc"
+            android:title="@string/finger_settings_factory_test_clear_pwd_auto_title" />
+
+        <CheckBoxPreference
+            android:key="finger_settings_factory_test_dump_image"
+            android:persistent="false"
+            android:summary="@string/finger_settings_factory_test_dump_image_desc"
+            android:title="@string/finger_settings_factory_test_dump_image_title" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

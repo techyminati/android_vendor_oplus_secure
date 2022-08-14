@@ -1,0 +1,182 @@
+LOCAL_PATH := $(call my-dir)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := anc.hal
+LOCAL_MODULE_TAGS := optional
+LOCAL_PROPRIETARY_MODULE := true
+#LOCAL_MODULE_OWNER := anc
+LOCAL_ODM_MODULE := true
+
+LOCAL_CFLAGS += -Wall -Wextra -Werror -Wshadow
+LOCAL_CFLAGS += -Wimplicit-function-declaration -Wconversion
+LOCAL_CFLAGS += -fstack-protector --param ssp-buffer-size=4 -Wstack-protector
+
+LOCAL_C_INCLUDES += $(LOCAL_PATH)/common/inc/
+LOCAL_C_INCLUDES += $(LOCAL_PATH)/extension_command/inc/
+LOCAL_C_INCLUDES += $(LOCAL_PATH)/../../../../vendor/fingerprint/hwbinder/dcs/include/
+
+LOCAL_SRC_FILES := \
+    common/src/anc_hal_common.c \
+    common/src/anc_hal_manager.c \
+    common/src/anc_hal_work_consumer.c \
+    common/src/anc_hal_netlink_event_manager.c \
+    common/src/anc_hal_tp_event_manager.c \
+    common/src/anc_hal_hbm_event_manager.c \
+    common/src/anc_hal_sensor_manager.c \
+    common/src/anc_hal_dcs_info.c \
+
+
+# config start
+
+#include $(TOPDIR)vendor/oplus/secure/biometrics/fingerprints/bsp/config/platform/qcom/config.mk
+include $(LOCAL_PATH)/../config.mk
+ifeq ($(ANC_CONFIG_DEBUG), TRUE)
+LOCAL_CFLAGS += -DANC_DEBUG
+endif
+
+ifeq ($(FP_JIIOV_TEMPLATE_UPDATE), y)
+LOCAL_CFLAGS    += -DFP_JIIOV_TEMPLATE_UPDATE_ENABLE
+endif
+
+ifeq ($(FP_CONFIG_SET_UXTHREAD),yes)
+LOCAL_CFLAGS += -DFP_SET_UXTREAD
+endif
+
+ifeq ($(FP_CONFIG_SET_PRIORITY),yes)
+LOCAL_CFLAGS += -DFP_SET_PRIORITY
+endif
+
+ifeq ($(ANC_CONFIG_CUSTOMER),)
+ANC_CONFIG_EXTENSION_COMMAND=anc
+else
+ANC_CONFIG_EXTENSION_COMMAND=$(ANC_CONFIG_CUSTOMER)
+endif
+LOCAL_CUSTOMER_EXTENSION_COMMAND_DIR := extension_command/$(ANC_CONFIG_EXTENSION_COMMAND)
+LOCAL_CUSTOMER_EXTENSION_COMMAND_PATH := $(LOCAL_PATH)/$(LOCAL_CUSTOMER_EXTENSION_COMMAND_DIR)
+include $(LOCAL_CUSTOMER_EXTENSION_COMMAND_PATH)/Android.mk
+
+LOCAL_C_INCLUDES += $(LOCAL_PATH)/extension_command/factory_test_v2/inc/
+LOCAL_SRC_FILES += extension_command/factory_test_v2/src/anc_extension_factory_mode.c
+
+ifeq ($(ANC_CONFIG_USE_SLEEP_REPLACE_WAIT_TP_EVENT), TRUE)
+LOCAL_CFLAGS += -DUSE_SLEEP_REPLACE_WAIT_TP_EVENT
+endif
+
+ifeq ($(ANC_CONFIG_USE_HW_AUTH_TOKEN), TRUE)
+LOCAL_CFLAGS += -DANC_USE_HW_AUTH_TOKEN
+endif
+
+ifeq ($(ANC_CONFIG_LOAD_BASE_IMAGE_FROM_RAW_FILE), TRUE)
+LOCAL_CFLAGS += -DLOAD_BASE_IMAGE_FROM_RAW_FILE
+endif
+
+ifeq ($(ANC_CONFIG_USE_VIRTUAL_SENSOR), TRUE)
+LOCAL_CFLAGS += -DVIRTUAL_SENSOR
+LOCAL_SRC_FILES += common/src/anc_hal_virtual_sensor_device.c
+else
+LOCAL_SRC_FILES += common/src/anc_hal_sensor_device.c
+endif
+
+ifeq ($(ANC_CONFIG_WAIT_TOUCH_DOWN_TIME_OUT),)
+LOCAL_CFLAGS += -DWAIT_TOUCH_DOWN_TIME_OUT=5000
+else
+LOCAL_CFLAGS += -DWAIT_TOUCH_DOWN_TIME_OUT=$(ANC_CONFIG_WAIT_TOUCH_DOWN_TIME_OUT)
+endif
+
+
+ifeq ($(ANC_CONFIG_QUICKLY_PICK_UP_FINGER), TRUE)
+LOCAL_CFLAGS += -DANC_QUICKLY_PICK_UP_FINGER
+ifneq ($(ANC_FINGER_ON_LIMIT_TIME),)
+LOCAL_CFLAGS += -DANC_FINGER_ON_TIME
+LOCAL_CFLAGS += -DANC_FINGER_ON_LIMIT_TIME=$(ANC_FINGER_ON_LIMIT_TIME)
+endif
+ifeq ($(ANC_CONFIG_QUICKLY_PICK_UP_FINGER_VERSION), V2)
+LOCAL_CFLAGS += -DANC_QUICKLY_PICK_UP_FINGER_VERSION_V2
+endif
+endif
+
+ifeq ($(ANC_CONFIG_WAIT_HBM),TRUE)
+LOCAL_CFLAGS += -DANC_WAIT_HBM_READY
+ifeq ($(ANC_CONFIG_WAIT_HBM_TIME_OUT),)
+LOCAL_CFLAGS += -DWAIT_HBM_TIME_OUT=600
+else
+LOCAL_CFLAGS += -DWAIT_HBM_TIME_OUT=$(ANC_CONFIG_WAIT_HBM_TIME_OUT)
+endif
+endif
+
+ifeq ($(ANC_CONFIG_QCOM_SPI_BIT_SHIFT),TRUE)
+LOCAL_CFLAGS += -DANC_QCOM_SPI_BIT_SHIFT
+endif
+
+ifeq ($(ANC_CONFIG_PADDING_INFO_IN_IMAGE_BUFFER),TRUE)
+LOCAL_CFLAGS += -DANC_PADDING_INFO_IN_IMAGE_BUFFER
+endif
+
+ifeq ($(ANC_CONFIG_LOCAL_TEE_PLATFORM), REE)
+LOCAL_CFLAGS += -DANC_LOCAL_REE_PLATFORM
+endif
+
+ifneq ($(ANC_CONFIG_HBM_PATH),)
+LOCAL_CFLAGS += -DANC_HBM_PATH='"$(ANC_CONFIG_HBM_PATH)"'
+else
+LOCAL_CFLAGS += -DANC_HBM_PATH='"/sys/kernel/oplus_display/hbm"'
+endif
+
+ifeq ($(ANC_CONFIG_ANDROID_VERSION),ANDROID_S)
+LOCAL_CFLAGS += -DANC_REPORT_REMAIN_NUMBER
+LOCAL_CFLAGS += -DANC_REPORT_SELF_TEST
+else
+LOCAL_CFLAGS += -DANC_ACTIVE_SYNC_TEMPLATE
+endif
+
+ifeq ($(ANC_CONFIG_SAVE_BMP_FILE),TRUE)
+LOCAL_CFLAGS += -DANC_SAVE_BMP_FILE
+endif
+# config end
+
+# kernel drvier compatibility config
+ANC_KERNEL_DRIVER_CONFIG_FILE = $(LOCAL_PATH)/../kernel_driver_config.mk
+ifeq ($(ANC_KERNEL_DRIVER_CONFIG_FILE), $(wildcard $(ANC_KERNEL_DRIVER_CONFIG_FILE)))
+include $(ANC_KERNEL_DRIVER_CONFIG_FILE)
+ifdef ANC_CONFIG_DEVICE_PATH_NAME
+LOCAL_CFLAGS += -DANC_DEVICE_PATH_NAME='"$(ANC_CONFIG_DEVICE_PATH_NAME)"'
+endif
+
+ifdef ANC_CONFIG_DEVICE_IOC_MAGIC
+LOCAL_CFLAGS += -DANC_IOC_MAGIC="'$(ANC_CONFIG_DEVICE_IOC_MAGIC)'"
+endif
+endif
+# end
+
+
+LOCAL_ANC_TAC_DIR := ../anc_tac
+LOCAL_ANC_TAC_PATH := $(LOCAL_PATH)/$(LOCAL_ANC_TAC_DIR)
+include $(LOCAL_ANC_TAC_PATH)/anc_tac.mk
+
+
+ifeq ($(ANC_CONFIG_SAVE_FILE),TRUE)
+LOCAL_CFLAGS += -DANC_SAVE_ALGO_FILE
+endif
+
+ifeq ($(ANC_CONFIG_ALGORITHM_STUDY_SWITCH),TRUE)
+LOCAL_CFLAGS += -DANC_ALGORITHM_STUDY_SWITCH
+endif
+
+ifeq ($(ANC_CONFIG_LOCAL_TEE_PLATFORM), TRUSTONIC)
+LOCAL_CFLAGS += -DANC_SENSOR_SPI_MTK
+endif
+
+ifneq ($(ANC_CONFIG_HEART_BEAT_EXPOSURE_TIME),)
+LOCAL_CFLAGS += -DHEART_BEAT_EXPOSURE_TIME=$(ANC_CONFIG_HEART_BEAT_EXPOSURE_TIME)
+else
+LOCAL_CFLAGS += -DHEART_BEAT_EXPOSURE_TIME=16667
+endif
+# --------------------------------------------------------------------------
+
+ifeq ($(ANC_WITH_LCOV), TRUE)
+LOCAL_CFLAGS += --coverage
+LOCAL_CXXFLAGS += --coverage
+LOCAL_LDFLAGS += --coverage
+endif
+
+include $(BUILD_SHARED_LIBRARY)

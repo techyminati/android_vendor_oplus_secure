@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <PreferenceCategory>
+        <EditTextPreference
+            android:key="enroll_env_set_userid"
+            android:persistent="false"
+            android:title="@string/enroll_env_set_userid_title" />
+
+        <ListPreference
+            android:entries="@array/enroll_env_set_hand_string"
+            android:entryValues="@array/enroll_env_set_hand_values"
+            android:key="enroll_env_set_hand"
+            android:persistent="false" />
+        <ListPreference
+            android:key="enroll_env_set_finger"
+            android:persistent="false" />
+    </PreferenceCategory>
+
+</PreferenceScreen>

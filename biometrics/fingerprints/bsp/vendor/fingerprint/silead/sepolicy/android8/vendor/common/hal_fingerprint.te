@@ -1,0 +1,18 @@
+
+# file types
+type silead_fpd_data_file, file_type, data_file_type;
+
+# Device types
+type silead_fpd_device, dev_type;
+
+# property types
+type silead_fp_prop, property_type;
+
+allow hal_fingerprint_default silead_fpd_device:chr_file rw_file_perms;
+
+allow hal_fingerprint_default self:unix_stream_socket { create_stream_socket_perms connectto };
+allow hal_fingerprint_default self:netlink_socket { create_socket_perms_no_ioctl };
+set_prop(hal_fingerprint_default, silead_fp_prop)
+
+allow hal_fingerprint_default silead_fpd_data_file:file { create_file_perms };
+allow hal_fingerprint_default silead_fpd_data_file:dir rw_dir_perms;

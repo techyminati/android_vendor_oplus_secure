@@ -1,0 +1,12 @@
+
+app_domain(silead_manager_app);
+binder_service(silead_manager_app);
+hal_client_domain(silead_manager_app, hal_fingerprint)
+
+# Read and write /data/data subdirectory.
+allow silead_manager_app system_app_data_file:dir create_dir_perms;
+allow silead_manager_app system_app_data_file:{ file lnk_file } create_file_perms;
+
+allow silead_manager_app silead_fp_service:service_manager { add find };
+allow silead_manager_app activity_service:service_manager { find };
+allow untrusted_app silead_fp_service:service_manager { find };

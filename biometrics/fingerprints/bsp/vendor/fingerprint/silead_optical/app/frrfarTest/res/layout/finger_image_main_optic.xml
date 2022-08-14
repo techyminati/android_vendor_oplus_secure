@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_margin="@dimen/layout_margin"
+    android:orientation="vertical" >
+
+    <CheckBox
+        android:id="@+id/finger_image_touch_enable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/finger_image_touch_enable_title" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/finger_image_setting_back"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/globle_back_btn_title" />
+
+        <Button
+            android:id="@+id/finger_image_setting_save"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/globle_ok_btn_title" />
+
+        <Button
+            android:id="@+id/finger_image_setting_pre_btn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/finger_image_pre_title" />
+
+        <Button
+            android:id="@+id/finger_image_setting_next_btn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/finger_image_next_title" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" 
+        android:gravity="center"
+        android:layout_marginTop="20dp">
+
+        <com.silead.frrfar.LongClickButton
+            android:id="@+id/finger_image_setting_sub_btn"
+            android:text="@string/finger_image_y_sub"
+            style="@style/PlusSubBtnStyle" />
+
+        <TextView
+            android:id="@+id/finger_image_layout_y"
+            style="@style/PlusSubValueLargerStyle" />
+
+        <com.silead.frrfar.LongClickButton
+            android:id="@+id/finger_image_setting_plus_btn"
+            android:text="@string/finger_image_y_plus"
+            style="@style/PlusSubBtnStyle" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_margin="@dimen/layout_margin"
+    android:orientation="vertical" >
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:scrollbars="vertical"
+        android:fadingEdge="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/finger_enroll_count_desc"
+                android:layout_marginTop="10dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" 
+                android:gravity="center">
+
+                <com.silead.frrfar.LongClickButton
+                    android:id="@+id/finger_enroll_setting_count_sub_btn"
+                    android:text="@string/finger_enroll_y_sub"
+                    style="@style/PlusSubBtnStyle" />
+
+                <TextView
+                    android:id="@+id/finger_enroll_setting_count"
+                    style="@style/PlusSubValueStyle" />
+
+                <com.silead.frrfar.LongClickButton
+                    android:id="@+id/finger_enroll_setting_count_plus_btn"
+                    android:text="@string/finger_enroll_y_plus"
+                    style="@style/PlusSubBtnStyle" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/finger_enroll_setting_diy_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/finger_enroll_id_desc" />
+
+                <CheckBox
+                    android:id="@+id/finger_enroll_img_diy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/finger_enroll_setting_id_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" 
+                android:gravity="center">
+
+                <com.silead.frrfar.LongClickButton
+                    android:id="@+id/finger_enroll_setting_id_sub_btn"
+                    android:text="@string/finger_enroll_y_sub"
+                    style="@style/PlusSubBtnStyle" />
+
+                <TextView
+                    android:id="@+id/finger_enroll_setting_id"
+                    style="@style/PlusSubValueStyle" />
+
+                <com.silead.frrfar.LongClickButton
+                    android:id="@+id/finger_enroll_setting_id_plus_btn"
+                    android:text="@string/finger_enroll_y_plus"
+                    style="@style/PlusSubBtnStyle" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/finger_enroll_setting_image_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" 
+                android:gravity="center"
+                android:layout_marginTop="10dp">
+
+                <Button
+                    android:id="@+id/finger_enroll_setting_image_sub_btn"
+                    android:text="@string/finger_enroll_y_sub"
+                    style="@style/PlusSubBtnStyle" />
+
+                <ImageView
+                    android:id="@+id/finger_enroll_setting_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/globle_image_desc"
+                    android:background="@drawable/shape_gray_square_bg" />
+
+                <Button
+                    android:id="@+id/finger_enroll_setting_image_plus_btn"
+                    android:text="@string/finger_enroll_y_plus"
+                    style="@style/PlusSubBtnStyle" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/finger_enroll_setting_delay_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="10dp" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/finger_enroll_delay_desc"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center">
+
+                    <com.silead.frrfar.LongClickButton
+                        android:id="@+id/finger_enroll_setting_delay_sub_btn"
+                        android:text="@string/finger_enroll_y_sub"
+                        style="@style/PlusSubBtnStyle" />
+
+                    <TextView
+                        android:id="@+id/finger_enroll_setting_delay"
+                        style="@style/PlusSubValueStyle" />
+
+                    <com.silead.frrfar.LongClickButton
+                        android:id="@+id/finger_enroll_setting_delay_plus_btn"
+                        android:text="@string/finger_enroll_y_plus"
+                        style="@style/PlusSubBtnStyle" />
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/enrolling_items_interval"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/finger_image_setting_back"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/globle_back_btn_title" />
+
+            <Button
+                android:id="@+id/finger_image_setting_restore"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/globle_restore_btn_title" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

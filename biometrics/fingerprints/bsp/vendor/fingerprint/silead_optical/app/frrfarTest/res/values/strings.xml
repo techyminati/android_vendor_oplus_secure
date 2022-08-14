@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">FRR/FAR指标测试</string>
+
+    <string name="main_test_option_title">测试选项</string>
+    <string name="main_test_item_frr">拒真率(FRR)测试</string>
+    <string name="main_test_item_far">认假率(FAR)测试</string>
+
+    <string name="main_finger_manager_title">指纹管理</string>
+    <string name="main_finger_item_exist">已有指纹</string>
+    <string name="main_finger_item_new">新建指纹</string>
+    <string name="main_finger_item_settings">指纹设置</string>
+    <string name="main_finger_item_report">测试报告</string>
+    <string name="main_finger_item_about">版本信息</string>
+
+    <string name="about_info_test_title">测试软件:</string>
+    <string name="about_info_hal_title">HAL版本：</string>
+    <string name="about_info_dev_title">驱动版本：</string>
+    <string name="about_info_algo_title">算法版本：</string>
+    <string name="about_info_ta_title">TA版本：</string>
+
+    <string name="enroll_env_set_title">录入环境</string>
+    <string name="enroll_env_set_userid_title">用户编号</string>
+    <string name="enroll_env_set_start_enroll">开始录入</string>
+
+    <string name="enrolling_calibrate_title">提示</string>
+    <string name="enrolling_calibrate_desc">是否要先进行校准？</string>
+    <string name="enrolling_calibrate_yes">是</string>
+    <string name="enrolling_calibrate_no">否</string>
+    <string name="enrolling_image_quality_title">图像质量:</string>
+    <string name="enrolling_effective_area_title">有效面积:</string>
+    <string name="enrolling_image_grey_title">灰度值(平均:MAX):</string>
+    <string name="enrolling_image_num_title">"请录入第<xliff:g id="count" example="1">%1$d</xliff:g>张"</string>
+    <string name="enrolling_image_num_finish_title">已录入完成</string>
+    <string name="enrolling_sample_pb_title">图像</string>
+    <string name="enrolling_btn_next_finger_title">录入下一手指</string>
+    <string name="enrolling_btn_plastic_finger_title">录入塑料假手指</string>
+    <string name="enrolling_btn_reenroll_title">重录上一张</string>
+    <string name="enrolling_begin_enroll_info">开始录入<xliff:g id="who" example="0001L1">%1$s</xliff:g>指纹</string>
+    <string name="enrolling_image_save_succeed">图像保存成功:<xliff:g id="path">%1$s</xliff:g></string>
+    <string name="enrolling_image_save_failed">图像保存失败:<xliff:g id="path">%1$s</xliff:g></string>
+    <string name="enrolling_image_re_enroll_last_image">重新录入第<xliff:g id="count" example="1">%1$d</xliff:g>张指纹</string>
+
+    <string name="finger_settings_enroll_title">录入设置</string>
+    <string name="finger_settings_enroll_sample_count_title">录入图像总数</string>
+    <string name="finger_settings_enroll_finger_title">需录入的手指</string>
+    <string name="finger_settings_enroll_data_path_title">数据保存目录</string>
+    <string name="finger_settings_test_title">测试设置</string>
+    <string name="finger_settings_test_farfrr_img_result_title">保存测试结果</string>
+    <string name="finger_settings_test_farfrr_img_result_desc">FRR/FAR测试保存每个图像的测试结果</string>
+    <string name="finger_settings_test_far_run_frr_first_title">FAR测试</string>
+    <string name="finger_settings_test_far_run_frr_first_desc">运行FAR测试时，先跑FRR更新模板（不记录FRR结果）</string>
+    <string name="finger_settings_test_farfrr_img_orig_title">采用原图测试</string>
+    <string name="finger_settings_test_farfrr_img_orig_desc">FRR/FAR测试时，是否采用原图测试，或者将采用处理后的图测试</string>
+    <string name="finger_settings_other_title">其他设置</string>
+    <string name="finger_settings_other_is_optic_title">"光学指纹"</string>
+    <string name="finger_settings_other_is_optic_desc">"指纹芯片为光学指纹时，请勾选该项"</string>
+    <string name="finger_settings_other_optic_finger_img_title">"指纹图标设置"</string>
+    <string name="finger_settings_other_gather_finger_title">"采集图像类型"</string>
+    <string name="finger_settings_other_img_display_title">"显示原始大小图像"</string>
+    <string name="finger_settings_other_img_display_desc">"显示对应图像的原始大小图像"</string>
+    <string name="finger_settings_other_img_count_each_down_title">"单次按下连续采集图像张数"</string>
+    <string name="finger_settings_other_img_count_each_down_desc">"单次手指按下时，需要连续采集图像的张数（该功能只能采集原图）"</string>
+    <string name="finger_settings_other_search_sensor_title">"寻找传感器"</string>
+    <string name="finger_settings_other_special_hidden_disabled">已打开特殊设置项</string>
+    <string name="finger_settings_other_special_hidden_enabled">已关闭特殊设置项</string>
+    <string name="finger_settings_factory_title">工模设置</string>
+    <string name="finger_settings_factory_test_clear_pwd_auto_title">"录入/比对测试自动删除屏幕锁"</string>
+    <string name="finger_settings_factory_test_clear_pwd_auto_desc">"工模中录入/比对测试时，自动删除屏幕锁及所有已录入指纹"</string>
+    <string name="finger_settings_factory_test_dump_image_title">"录入/比对测试显示指纹图像"</string>
+    <string name="finger_settings_factory_test_dump_image_desc">"工模中录入/比对测试时，显示当前指纹图像"</string>
+
+    <string name="finger_image_layout_y_title">"Y位移："</string>
+    <string name="finger_image_pre_title">"前一张"</string>
+    <string name="finger_image_next_title">"后一张"</string>
+    <string name="finger_image_touch_enable_title">"按压/离开图标时通知手指按压/抬起"</string>
+    <string name="finger_image_y_plus">"+"</string>
+    <string name="finger_image_y_sub">"-"</string>
+
+    <string name="finger_enroll_count_desc">"单次手指按压，需要抓图的张数：（0：关闭该功能）"</string>
+    <string name="finger_enroll_id_desc">"设置当前张数对应的指纹图标："</string>
+    <string name="finger_enroll_y_plus">"+"</string>
+    <string name="finger_enroll_y_sub">"-"</string>
+    <string name="finger_enroll_delay_desc">"动态切换图标需要的时间：(ms)"</string>
+
+    <string name="frrfar_test_info_wait_test">等待开始</string>
+    <string name="frrfar_test_info_testing">正在测试</string>
+    <string name="frrfar_test_info_test_finish">测试完成</string>
+    <string name="frrfar_test_result_fail_times_title">失败次数:</string>
+    <string name="frrfar_test_result_fail_title">测试结果:</string>
+    <string name="frrfar_test_result_target_title">技术指标:</string>
+    <string name="frrfar_test_start_btn_title">开始测试</string>
+    <string name="frrfar_test_report_btn_title">测试报告</string>
+    <string name="frrfar_test_again_btn_title">重新测试</string>
+    <string name="frrfar_test_result_target_info">该测试结果应小于<xliff:g id="percent">%1$.3f</xliff:g></string>
+    <string name="frrfar_test_current_image_info">已加载<xliff:g id="name">%1$s</xliff:g></string>
+    <string name="frrfar_test_load_tpl_time">录入模板---Total:<xliff:g id="total">%1$d</xliff:g>(ms) Avg:<xliff:g id="avg">%2$.2f</xliff:g>(ms)</string>
+    <string name="frrfar_test_auth_success_time">匹配成功---Total:<xliff:g id="total">%1$d</xliff:g>(ms) Avg:<xliff:g id="avg">%2$.2f</xliff:g>(ms)</string>
+    <string name="frrfar_test_auth_failed_time">匹配失败---Total:<xliff:g id="total">%1$d</xliff:g>(ms) Avg:<xliff:g id="avg">%2$.2f</xliff:g>(ms)</string>
+    <string name="frrfar_test_tpl_upd_time">更新模板---Total:<xliff:g id="total">%1$d</xliff:g>(ms) Avg:<xliff:g id="avg">%2$.2f</xliff:g>(ms)</string>
+
+    <string name="globle_x_desc">X</string>
+    <string name="globle_y_desc">Y</string>
+    <string name="globle_image_desc">图像</string>
+    <string name="globle_restore_btn_title">恢复默认</string>
+    <string name="globle_ok_btn_title">确定</string>
+    <string name="globle_back_btn_title">返回</string>
+    <string name="globle_not_found_service">未找到相关资源/服务</string>
+
+    <string name="unknow">未知</string>
+    <string name="globle_err_not_found_service">未找到相关资源/服务</string>
+    <string name="globle_err_data_invalide">数据不完整</string>
+    <string name="globle_err_bad_param">参数无效，操作被取消</string>
+    <string name="globle_err_move_to_fast">请勿快速移动手指</string>
+    <string name="globle_err_enroll_same_area">录入模板中，录入区域重复，请移动手指重新录入。</string>
+    <string name="globle_err_enroll_quality_fail">指纹图片的质量不达标，请重新录入。</string>
+    <string name="globle_err_enroll_coverarea_fail">指纹图片的覆盖率不达标，请重新录入。</string>
+    <string name="globle_err_enroll_quality_coverarea_fail">指纹图片的质量和覆盖率都不达标，请重新录入。</string>
+    <string name="globle_err_enroll_fake_finger">检测为无效指纹，请重新录入。</string>
+    <string name="globle_err_enroll_gain_improve_timeout">调图失败，请重新尝试录入。</string>
+    <string name="globle_err_canceled">操作被取消</string>
+
+</resources>

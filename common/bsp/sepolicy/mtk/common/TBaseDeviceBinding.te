@@ -1,0 +1,18 @@
+# #  <trustonic kph> begin
+#type TBaseDeviceBinding_exec, exec_type, vendor_file_type, file_type;
+type TBaseDeviceBinding_exec, exec_type, file_type, vendor_file_type;
+allow TBaseDeviceBinding_exec mobicore_data_file:dir { read getattr open search };
+allow TBaseDeviceBinding_exec mobicore_data_file:file { read write create open getattr };
+##allow mobicore TBaseDeviceBinding_exec:file { entrypoint };
+allow mobicore adbd: fd { use };
+allow mobicore adbd: process { sigchld };
+allow mobicore shell: fd { use };
+allow mobicore storage_file: lnk_file { read };
+allow mobicore mnt_user_file: dir { search };
+allow mobicore mnt_user_file: lnk_file { read };
+allow mobicore sdcardfs: dir { read getattr open search write add_name };
+allow mobicore sdcardfs: file { read write create open getattr};
+type_transition shell TBaseDeviceBinding_exec:process mobicore;
+##allow mobicore media_rw_data_file:file { read write create open getattr };
+##allow mobicore media_rw_data_file:dir { read getattr write open search add_name };
+# #  <trustonic kph> begin

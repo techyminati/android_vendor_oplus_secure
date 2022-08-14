@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <PreferenceCategory android:title="@string/main_finger_item_about" >
+        <Preference
+            android:key="about_info_test"
+            android:persistent="false"
+            android:title="@string/about_info_test_title" />
+        <Preference
+            android:key="about_info_hal"
+            android:persistent="false"
+            android:title="@string/about_info_hal_title" />
+        <Preference
+            android:key="about_info_dev"
+            android:persistent="false"
+            android:title="@string/about_info_dev_title" />
+        <Preference
+            android:key="about_info_algo"
+            android:persistent="false"
+            android:title="@string/about_info_algo_title" />
+        <Preference
+            android:key="about_info_ta"
+            android:persistent="false"
+            android:title="@string/about_info_ta_title" />
+    </PreferenceCategory>
+
+</PreferenceScreen>

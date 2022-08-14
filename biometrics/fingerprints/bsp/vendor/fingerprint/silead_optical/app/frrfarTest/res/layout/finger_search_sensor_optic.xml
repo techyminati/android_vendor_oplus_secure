@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RelativeLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:scrollbars="vertical" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:layout_marginTop="20dp">
+
+                    <TextView
+                        android:id="@+id/finger_search_sensor_x_desc"
+                        android:text="@string/globle_x_desc"
+                        style="@style/PlusSubValueStyle"/>
+
+                    <com.silead.frrfar.LongClickButton
+                        android:id="@+id/finger_search_sensor_x_sub_btn"
+                        android:text="@string/finger_image_y_sub"
+                        style="@style/PlusSubBtnStyle" />
+
+                    <TextView
+                        android:id="@+id/finger_search_sensor_x"
+                        style="@style/PlusSubValueLargerStyle" />
+
+                    <com.silead.frrfar.LongClickButton
+                        android:id="@+id/finger_search_sensor_x_plus_btn"
+                        android:text="@string/finger_image_y_plus"
+                        style="@style/PlusSubBtnStyle" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/finger_search_sensor_y_desc"
+                        android:text="@string/globle_y_desc"
+                        style="@style/PlusSubValueStyle"/>
+
+                    <com.silead.frrfar.LongClickButton
+                        android:id="@+id/finger_search_sensor_y_sub_btn"
+                        android:text="@string/finger_image_y_sub"
+                        style="@style/PlusSubBtnStyle" />
+
+                    <TextView
+                        android:id="@+id/finger_search_sensor_y"
+                        style="@style/PlusSubValueLargerStyle" />
+
+                    <com.silead.frrfar.LongClickButton
+                        android:id="@+id/finger_search_sensor_y_plus_btn"
+                        android:text="@string/finger_image_y_plus"
+                        style="@style/PlusSubBtnStyle" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="300dp"
+                    android:gravity="center">
+                    <ImageView
+                        android:id="@+id/finger_search_sensor_imageview"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="@string/enrolling_sample_pb_title"
+                        android:padding="2dp"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <View android:id="@+id/finger_search_sensor_area"
+                android:layout_width="fill_parent"
+                android:layout_height="1000.0dp" />
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/ui_bottom_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="10dp"
+        android:text="@string/globle_back_btn_title" />
+</RelativeLayout >

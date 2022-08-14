@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+	<string-array name="finger_settings_enroll_finger_string">
+        <item>拇指</item>
+        <item>食指</item>
+        <item>中指</item>
+        <item>无名指</item>
+        <item>小指</item>
+    </string-array>
+    <string-array name="finger_settings_enroll_finger_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
+    <string-array name="enroll_env_set_hand_string">
+        <item>左手</item>
+        <item>右手</item>
+    </string-array>
+    <string-array name="enroll_env_set_hand_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+    </string-array>
+    <string-array name="enroll_env_set_gather_finger_string">
+        <item>仅抓取处理后的图</item>
+        <item>仅抓取原始图</item>
+        <item>抓取原始图和处理后的图</item>
+    </string-array>
+    <string-array name="enroll_env_set_gather_finger_value" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+    <string-array name="finger_image_name_optic" translatable="false">
+        <item>finger_image_black</item>
+        <item>finger_image_blue</item>
+        <item>finger_image_green</item>
+        <item>finger_image_white</item>
+        <item>finger_image_test1</item>
+        <item>finger_image_test2</item>
+        <item>finger_image_test3</item>
+        <item>finger_image_test4</item>
+        <item>finger_image_white_gradient_140_140</item>
+        <item>finger_image_white_gradient_160_160</item>
+    </string-array>
+
+</resources>

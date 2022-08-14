@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <PreferenceScreen
+        android:key="main_test_item_self_test"
+        android:title="@string/main_test_item_self_test" >
+        <intent
+            android:action="android.intent.action.MAIN"
+            android:targetClass="com.silead.factorytest.SelfTestActivity"
+            android:targetPackage="com.silead.factorytest" />
+    </PreferenceScreen>
+    <PreferenceScreen
+        android:key="main_test_item_spi"
+        android:title="@string/main_test_item_spi" >
+        <intent
+            android:action="android.intent.action.MAIN"
+            android:targetClass="com.silead.factorytest.SpiTestActivity"
+            android:targetPackage="com.silead.factorytest" />
+    </PreferenceScreen>
+    <PreferenceScreen
+        android:key="main_test_item_reset_pin"
+        android:title="@string/main_test_item_reset_pin" >
+        <intent
+            android:action="android.intent.action.MAIN"
+            android:targetClass="com.silead.factorytest.ResetPinTestActivity"
+            android:targetPackage="com.silead.factorytest" />
+    </PreferenceScreen>
+    <PreferenceScreen
+        android:key="main_test_item_dead_pixel"
+        android:title="@string/main_test_item_dead_pixel" >
+        <intent
+            android:action="android.intent.action.MAIN"
+            android:targetClass="com.silead.factorytest.DeadPixelTestActivity"
+            android:targetPackage="com.silead.factorytest" />
+    </PreferenceScreen>
+    <PreferenceScreen
+        android:key="main_test_item_spi_stress"
+        android:title="@string/main_test_item_spi_stress" >
+        <intent
+            android:action="android.intent.action.MAIN"
+            android:targetClass="com.silead.factorytest.SpiStressTestActivity"
+            android:targetPackage="com.silead.factorytest" />
+    </PreferenceScreen>
+    <PreferenceScreen
+        android:key="main_test_item_flash"
+        android:title="@string/main_test_item_flash" >
+        <intent
+            android:action="android.intent.action.MAIN"
+            android:targetClass="com.silead.factorytest.FlashTestActivity"
+            android:targetPackage="com.silead.factorytest" />
+    </PreferenceScreen>
+    <PreferenceScreen
+        android:key="main_test_item_otp"
+        android:title="@string/main_test_item_otp" >
+        <intent
+            android:action="android.intent.action.MAIN"
+            android:targetClass="com.silead.factorytest.OTPTestActivity"
+            android:targetPackage="com.silead.factorytest" />
+    </PreferenceScreen>
+    <PreferenceScreen
+        android:key="main_test_item_cal"
+        android:title="@string/main_test_item_cal" >
+        <intent
+            android:action="android.intent.action.MAIN"
+            android:targetClass="com.silead.factorytest.CalibrateActivity"
+            android:targetPackage="com.silead.factorytest" />
+    </PreferenceScreen>
+    <PreferenceScreen
+        android:key="main_test_item_speed"
+        android:title="@string/main_test_item_speed" >
+        <intent
+            android:action="android.intent.action.MAIN"
+            android:targetClass="com.silead.factorytest.SpeedTestActivity"
+            android:targetPackage="com.silead.factorytest" />
+    </PreferenceScreen>
+    <PreferenceScreen
+        android:key="main_test_item_finger"
+        android:title="@string/main_test_item_finger" >
+        <intent
+            android:action="android.intent.action.MAIN"
+            android:targetClass="com.silead.factorytest2.FingerTestActivity"
+            android:targetPackage="com.silead.factorytest2" />
+    </PreferenceScreen>
+    <PreferenceScreen
+        android:key="main_test_item_about"
+        android:title="@string/main_test_item_about" >
+        <intent
+            android:action="android.intent.action.MAIN"
+            android:targetClass="com.silead.factorytest.FingerAboutActivity"
+            android:targetPackage="com.silead.factorytest" />
+    </PreferenceScreen>
+
+</PreferenceScreen>

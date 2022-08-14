@@ -1,0 +1,15 @@
+###############################################################################
+## Copyright 2017 OPLUS Mobile Comm Corp., Ltd.
+## OPLUS_FEATURE_SECURITY_COMMON
+## File: file_contexts
+## Description : add for file contexts
+## Version: 1.0
+## Date : 2017/11/19
+## Author: Ziqing.Guo@BSP.Fingerprint.Basic
+## ----------------- Revision History: ----------------------
+## <author>      <data>        <desc>
+##  Bin.Li        2018/03/12        add for devicebinding of trustonic tee in MTK6771
+################################################################################
+
+/vendor/bin/TBaseDeviceBinding u:object_r:TBaseDeviceBinding_exec:s0
+

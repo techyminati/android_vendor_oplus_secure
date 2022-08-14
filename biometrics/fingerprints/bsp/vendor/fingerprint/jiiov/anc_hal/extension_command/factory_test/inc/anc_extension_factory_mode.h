@@ -1,0 +1,24 @@
+#ifndef __ANC_EXTENSION_FACTORY_MODE_H__
+#define __ANC_EXTENSION_FACTORY_MODE_H__
+
+#include "anc_hal_manager.h"
+#include "anc_error.h"
+
+ANC_RETURN_TYPE ExtCommandFTInit(AncFingerprintManager *p_manager);
+ANC_RETURN_TYPE ExtCommandFTModuleTest(AncFingerprintManager *p_manager);
+ANC_RETURN_TYPE ExtCommandFTWhiteAutoExpCalibration(AncFingerprintManager *p_manager);
+ANC_RETURN_TYPE ExtCommandFTWhitePreventATest(AncFingerprintManager *p_manager);
+ANC_RETURN_TYPE ExtCommandFTWhiteAutoExpATest(AncFingerprintManager *p_manager);
+ANC_RETURN_TYPE ExtCommandFTWhiteLensAndDefectTC(AncFingerprintManager *p_manager);
+ANC_RETURN_TYPE ExtCommandFTWhiteInstallOffsetTest(AncFingerprintManager *p_manager);
+ANC_RETURN_TYPE ExtCommandFTBlackAllTC(AncFingerprintManager *p_manager);
+ANC_RETURN_TYPE ExtCommandFTWhiteStripeAllTC(AncFingerprintManager *p_manager);
+ANC_RETURN_TYPE ExtCommandFTSaveCalibrationData(AncFingerprintManager *p_manager);
+ANC_RETURN_TYPE ExtCommandFTCaptureFingerImage(AncFingerprintManager *p_manager);
+ANC_RETURN_TYPE ExtCommandFTDeinit(AncFingerprintManager *p_manager);
+
+ANC_RETURN_TYPE ExtCommandFTWhiteExpCalibration(AncFingerprintManager *p_manager);
+ANC_RETURN_TYPE ExtCommandFTModuleTestV2(AncFingerprintManager *p_manager);
+ANC_RETURN_TYPE ExtCommandFTCaptureFingerImageV2(AncFingerprintManager *p_manager);
+
+#endif

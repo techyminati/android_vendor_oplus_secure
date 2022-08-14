@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <dimen name="layout_margin">10dp</dimen>
+    <dimen name="enrolling_items_interval">5dp</dimen>
+
+</resources>

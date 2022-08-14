@@ -1,0 +1,29 @@
+/*
+ * Copyright (C) 2013-2019, Shenzhen Huiding Technology Co., Ltd.
+ * All Rights Reserved.
+ */
+
+#ifndef _CUSTOMIZEDHALCONFIG_H_
+#define _CUSTOMIZEDHALCONFIG_H_
+
+#define PROPERTY_SCREEN_TYPE "persist.vendor.fingerprint.optical.lcdtype"
+#define SCREEN_TYPE_AD097_SAMSUNG "AD097_SAMSUNG"
+#define SCREEN_TYPE_AD097_BOE "AD097_BOE"
+#define SCREEN_TYPE_BD187_SAMSUNG "BD187_SAMSUNG"
+#define SCREEN_TYPE_CC151_SAMSUNG "CC151_SAMSUNG"
+#define SCREEN_TYPE_CC161_SAMSUNG "CC161_SAMSUNG"
+#define SCREEN_TYPE_DD306_SAMSUNG "DD306_SAMSUNG"
+#define SCREEN_TYPE_AD119_SAMSUNG "AD119_SAMSUNG"
+#define SCREEN_TYPE_AE009_SAMSUNG "AE009_SAMSUNG"
+#define SCREEN_TYPE_AE009_BOE "AE009_BOE"
+#define PROPERTY_DEVICE_STATE "ro.boot.flash.locked"
+
+
+namespace goodix {
+    const char* getDumpRootDir(void);
+    const char* getDumpControlProperty(void);
+    bool checkScreenType(char *type);
+    bool isTerminalUnlocked(void);
+}  // namespace goodix
+
+#endif /* _CUSTOMIZEDHALCONFIG_H_ */

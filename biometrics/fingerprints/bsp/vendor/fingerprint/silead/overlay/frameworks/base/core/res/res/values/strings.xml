@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Array containing custom messages shown during fingerprint acquisision from vendor.  Vendor is expected to add and translate these strings -->
+    <string-array name="fingerprint_acquired_vendor">
+        <item>Fingerprint param invalid.</item>
+        <item>Out of memory.</item>
+        <item>fp dev operate failed.</item>
+        <item>set spi config failed.</item>
+        <item>Fingerprint enroll challenge invalid.</item>
+        <item>Fingerprint enroll untrust.</item>
+        <item>Fingerprint hardware version invalid.</item>
+        <item>fingerprint config invalid.</item>
+        <item>fp dev open failed.</item>
+        <item>open ta failed.</item>
+        <item>send command to ta failed.</item>
+        <item>shared memory alloc failed.</item>
+        <item>shared memory map failed in ta.</item>
+        <item>ta operate failed.</item>
+        <item>some interface that not impliment in ta.</item>
+        <item>request command id not support.</item>
+        <item>storage operate failed.</item>
+        <item>The finger already exist, please change another finger and try again.</item>
+        <item>Finger moved too fast. Please try again.</item>
+        <item>Not detect the finger.</item>
+        <item>Enrolled in same area, please move your finger and try again.</item>
+        <item>Image quality unqualified, please try again.</item>
+        <item>Cover area unqualified, please try again.</item>
+        <item>Image quality and cover area unqualified, please try again.</item>
+        <item>fake finger, please try again.</item>
+        <item>gain improve time out.</item>
+        <item>spi timeout.</item>
+        <item>download config failed.</item>
+        <item>spi data transfer failed.</item>
+        <item>enroll failed, such as malloc failed or others.</item>
+        <item>operator be canceled.</item>
+        <item>finger mismatch.</item>
+        <item>template is invalid.</item>
+        <item>template full.</item>
+        <item>load template failed.</item>
+    </string-array>
+
+    <!-- Array containing custom error messages from vendor.  Vendor is expected to add and translate these strings -->
+    <string-array name="fingerprint_error_vendor">
+        <item>Fingerprint param invalid.</item>
+        <item>Out of memory.</item>
+        <item>fp dev operate failed.</item>
+        <item>set spi config failed.</item>
+        <item>Fingerprint enroll challenge invalid.</item>
+        <item>Fingerprint enroll untrust.</item>
+        <item>Fingerprint hardware version invalid.</item>
+        <item>fingerprint config invalid.</item>
+        <item>fp dev open failed.</item>
+        <item>open ta failed.</item>
+        <item>send command to ta failed.</item>
+        <item>shared memory alloc failed.</item>
+        <item>shared memory map failed in ta.</item>
+        <item>ta operate failed.</item>
+        <item>some interface that not impliment in ta.</item>
+        <item>request command id not support.</item>
+        <item>storage operate failed.</item>
+        <item>The finger already exist, please change another finger and try again.</item>
+        <item>Finger moved too fast. Please try again.</item>
+        <item>Not detect the finger.</item>
+        <item>Enrolled in same area, please move your finger and try again.</item>
+        <item>Image quality unqualified, please try again.</item>
+        <item>Cover area unqualified, please try again.</item>
+        <item>Image quality and cover area unqualified, please try again.</item>
+        <item>fake finger, please try again.</item>
+        <item>gain improve time out.</item>
+        <item>spi timeout.</item>
+        <item>download config failed.</item>
+        <item>spi data transfer failed.</item>
+        <item>enroll failed, such as malloc failed or others.</item>
+        <item>operator be canceled.</item>
+        <item>finger mismatch.</item>
+        <item>template is invalid.</item>
+        <item>template full.</item>
+        <item>load template failed.</item>
+    </string-array>
+</resources>

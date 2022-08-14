@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/MainFrameStyle"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        style="@style/TestResultContentStyle"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/speed_item_result_title" />
+
+            <TextView
+                android:id="@+id/test_speed_item_result"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" 
+                android:layout_weight="1"
+                android:gravity="right"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/speed_item_quality_title" />
+
+            <TextView
+                android:id="@+id/test_speed_item_quality"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" 
+                android:layout_weight="1"
+                android:gravity="right"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/speed_item_area_title" />
+
+            <TextView
+                android:id="@+id/test_speed_item_area"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" 
+                android:layout_weight="1"
+                android:gravity="right"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/speed_item_capture_title" />
+
+            <TextView
+                android:id="@+id/test_speed_item_capture"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" 
+                android:layout_weight="1"
+                android:gravity="right"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/speed_item_reduce_noise_title" />
+
+            <TextView
+                android:id="@+id/test_speed_item_reduce_noise"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" 
+                android:layout_weight="1"
+                android:gravity="right"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/speed_item_auth_title" />
+
+            <TextView
+                android:id="@+id/test_speed_item_auth"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" 
+                android:layout_weight="1"
+                android:gravity="right"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/speed_item_tpl_upd_title" />
+
+            <TextView
+                android:id="@+id/test_speed_item_tpl_upd"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" 
+                android:layout_weight="1"
+                android:gravity="right"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <include layout="@layout/ui_include_preference_main" />
+
+</LinearLayout>
